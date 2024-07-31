@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
+import React, { memo } from "react";
 import { css } from "@emotion/react";
 import Card from "../../atoms/card/Card";
 import UserIconWithName from "../../molecules/user/UserIconWithName";
@@ -19,7 +19,7 @@ interface UserCardProps {
   user: User;
 }
 
-const UserCard: React.FC<UserCardProps> = (props) => {
+const UserCard: React.FC<UserCardProps> = memo((props) => {
   const { user } = props;
 
   return (
@@ -37,7 +37,7 @@ const UserCard: React.FC<UserCardProps> = (props) => {
       </dl>
     </Card>
   );
-};
+});
 
 const userCardList = css`
   text-align: left;

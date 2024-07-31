@@ -5,12 +5,17 @@ import BaseButtonStyle from "./_BaseButton";
 
 interface SecondaryButtonProps {
   children: React.ReactNode;
+  onClick: React.MouseEventHandler;
 }
 
 const SecondaryButton: React.FC<SecondaryButtonProps> = (props) => {
-  const { children } = props;
+  const { children, onClick } = props;
 
-  return <button css={buttonStyle}>{children}</button>;
+  return (
+    <button css={buttonStyle} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 const buttonStyle = css`
